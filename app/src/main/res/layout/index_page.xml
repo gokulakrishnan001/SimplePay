@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
+        <variable
+            name="ViewModel"
+            type="com.example.logindb.viewmodel.TransactionModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wallet"
+            android:id="@+id/txt"
+            android:textSize="25sp"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtfield1"
+            android:layout_marginTop="20dp"
+            app:startIconDrawable="@drawable/ic_baseline_phone_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:counterMaxLength="10"
+            app:counterEnabled="true"
+            app:layout_constraintTop_toBottomOf="@id/txt"
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:id="@+id/name"
+                android:hint="Enter a Amount To Add Wallet"
+                android:text="@={ViewModel.amount}"
+                android:layout_height="wrap_content"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="80dp"
+            android:id="@+id/submit"
+            android:layout_marginTop="15dp"
+            android:text="Add"
+            android:onClick="@{()->ViewModel.addWallet()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtfield1"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
