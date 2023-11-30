@@ -10,7 +10,7 @@ class DetailsRepository(private val dao:LoginDao) {
         return dao.insert(user)
     }
     suspend fun getUserName(userName:String?):Details?{
-        return dao.getUserName(userName)
+        return dao.getPhoneName(userName)
     }
     suspend fun getUserName1(name:String?):Details?{
         return dao.getUserDetails(name)

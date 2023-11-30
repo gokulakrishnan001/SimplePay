@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.logindb.HomeFragment"
+        android:name="com.example.logindb.fragment.HomeFragment"
         android:label="HomeFragment" >
         <action
             android:id="@+id/action_homeFragment_to_signUpFragment"
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.logindb.SignUpFragment"
+        android:name="com.example.logindb.fragment.SignUpFragment"
         android:label="SignUpFragment" >
         <action
             android:id="@+id/action_signUpFragment_to_homeFragment"
@@ -25,6 +25,53 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.logindb.LoginFragment"
-        android:label="LoginFragment" />
+        android:name="com.example.logindb.fragment.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_walletFragment"
+            app:destination="@id/walletFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_transcationFragment"
+            app:destination="@id/transcationFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_dashBoardFragment"
+            app:destination="@id/dashBoardFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/walletFragment"
+        android:name="com.example.logindb.fragment.WalletFragment"
+        android:label="WalletFragment" >
+        <action
+            android:id="@+id/action_walletFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transcationFragment"
+        android:name="com.example.logindb.fragment.TranscationFragment"
+        android:label="TranscationFragment" >
+        <action
+            android:id="@+id/action_transcationFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dashBoardFragment"
+        android:name="com.example.logindb.fragment.DashBoardFragment"
+        android:label="DashBoardFragment" >
+        <action
+            android:id="@+id/action_dashBoardFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.logindb.fragment.HistoryFragment"
+        android:label="HistoryFragment" >
+        <action
+            android:id="@+id/action_historyFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+
 </navigation>

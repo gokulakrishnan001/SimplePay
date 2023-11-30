@@ -12,13 +12,13 @@ import java.lang.NullPointerException
 class RegisterViewModel(private val repository: DetailsRepository):
     ViewModel() {
 
-    val name=MutableLiveData<String>()
+    val name=MutableLiveData<String?>()
 
-    val email=MutableLiveData<String>()
+    val email=MutableLiveData<String?>()
 
-    val phone=MutableLiveData<String>()
+    val phone=MutableLiveData<String?>()
 
-    val password=MutableLiveData<String>()
+    val password=MutableLiveData<String?>()
 
     val confirmPassword=MutableLiveData<String>()
 

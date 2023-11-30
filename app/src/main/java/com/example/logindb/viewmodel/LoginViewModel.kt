@@ -39,11 +39,16 @@ class LoginViewModel(private val repository: DetailsRepository):
             navigation.value = false
         } else {
             CoroutineScope(Dispatchers.IO).launch {
-                val user = repository.getUserName(username.value.toString())
+                val user = repository.getUserName(username.value)
                 Log.i("him", user.toString())
                 Log.i("him", username.value.toString())
                 Log.i("him", data)
-                Log.i("him", "${username.value}")
+                Log.i("him","${password.value}")
+
+                Log.i("him", "phone no:${user?.phone}")
+
+                Log.i("him", "phone no:${user?.password}")
+
                 withContext(Dispatchers.Main) {
                     if (user != null) {
                         if (user.password == password.value) {

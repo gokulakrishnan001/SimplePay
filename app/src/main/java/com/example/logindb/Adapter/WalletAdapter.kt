@@ -1,12 +1,16 @@
 package com.example.logindb.Adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.logindb.database.Details
+import com.example.logindb.database.Wallet
 import com.example.logindb.databinding.ListViewBinding
 
-class ListAdapter(private val details:List<Details?>):RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
+class WalletAdapter(
+     private val user:List<Details?>
+    ):RecyclerView.Adapter<WalletAdapter.MyViewHolder>() {
 
     inner class MyViewHolder(val binding:ListViewBinding):RecyclerView.ViewHolder(binding.root)
 
@@ -16,16 +20,18 @@ class ListAdapter(private val details:List<Details?>):RecyclerView.Adapter<ListA
         return MyViewHolder(binding)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.binding.apply {
-            txt1.text="ENTRIES"+details[position]!!.id
-            txt2.text="NAME:"+details[position]!!.name
-            txt3.text="EMAIL:"+details[position]!!.email
-            txt4.text="PHONE NO:"+details[position]!!.phone
+            txt1.text="User Name:"+user[position]!!.name
+            txt2.text="Mobile Number:"+user[position]!!.phone
+            txt3.text="Email"+user[position]!!.email
+
+
         }
     }
 
     override fun getItemCount(): Int {
-        return details.size
+        return 1
     }
 }
